@@ -243,6 +243,7 @@ header .icon:hover {
 
   header .topheader {
     position: absolute;
+    /* font-size: .85rem; */
     width: auto;
     top: 100%;
     left: -225px;
@@ -406,11 +407,10 @@ main .sale-note {
 }
 
 .home .text-container {
-  width:100%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
 }
 .fashion-container-home {
   margin-bottom: 15px;
@@ -436,14 +436,14 @@ main .sale-note {
 .btn-container-home {
   padding: clamp(6px, 0.5vw + 4px, 12px) clamp(12px, 1vw + 10px, 24px);
   background-color: rgba(255, 255, 255, 0.64);
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 1.5625rem;
   font-style: italic;
   border-radius: 10px;
   transition: 0.3s;
   opacity: 0.8;
   cursor: pointer;
-  white-space: nowrap
+  white-space: nowrap;
 }
 
 .btn-container-home:hover {
@@ -452,8 +452,7 @@ main .sale-note {
   color: #fdf8f4;
 }
 
-
-@media (max-width: 480px) ,(min-width: 768px) and (max-width: 1200px){
+@media (max-width: 480px), (min-width: 768px) and (max-width: 1200px) {
   .home {
     background-position: right;
   }
@@ -467,81 +466,119 @@ main .sale-note {
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {
-   .container-home {
+  .container-home {
     gap: 60px;
-  }}
+  }
+}
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.collection1 {
+  width: 100%;
+  padding: 2%;
+}
 
 .container-collection1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  height: 70vh;
-  margin: 50px auto;
+  height: 100%;
+  padding: 1.5% 14%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   border-radius: 10px;
   background-color: #e1a288;
 }
+
 .baby-collection1 {
-  width: 20%;
-  height: 450px;
-  background-color: beige;
-  border-radius: 10px;
-  background-image: url(../images/Cutey\ .jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
   position: relative;
+}
+
+.baby-collection1 .img-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
   overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  transition: 0.5s;
 }
-.Fashion1 {
-  background-image: url(../images/download.jpg);
-}
-.Fashion2 {
-  background-image: url(../images/Baby\ Boy.jpg);
-}
-.baby-collection1 h2 {
-  position: absolute;
-  bottom: 20px;
+
+.baby-collection1 img {
+  display: block;
   width: 100%;
+}
+
+.baby-collection1 .text-coontainer{
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
   color: #f8f8f2;
-  z-index: 999;
-  font-size: 30px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  text-align: center;
   transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
 }
+
+.baby-collection1 h2 {
+  position: relative;
+  bottom: 0;
+  font-size: clamp(1.5rem, 1rem + 2.5vw, 2.5rem);
+  z-index: 999; 
+  transition: 1s;
+}
+
+.text-coontainer:hover h2{
+  bottom: 20%;
+}
+
 .baby-collection1 a {
-  position: absolute;
-  width: 100%;
-  bottom: -60px;
-  left: 70%;
-  transform: translateX(-50%);
-  padding: 10px 25px;
-  font-size: 27px;
-  font-weight: bold;
   color: rgb(94, 89, 89);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  position: relative;
+  bottom: 0;
+  font-weight: bold;
+  font-size: clamp(1.5rem, 1.05rem + 2.25vw, 2.1875rem);
+  text-decoration: underline;
   visibility: hidden;
   transition: 1s;
 }
+
 .baby-collection1:hover {
   transform: scale(1.02, 1.02);
 }
-.baby-collection1:hover h2 {
-  bottom: 50px;
-}
+
 .baby-collection1:hover a {
   visibility: visible;
-  bottom: 10px;
+  bottom: 20%;
 }
+
+@media (max-width: 480px) {
+  .collection1{
+    padding: 0;
+  }
+  
+  .container-collection1{
+    grid-template-columns: repeat(1, 1fr);
+    padding: 5% 14%;
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+ .container-collection1{
+  grid-template-columns: repeat(2, 1fr);
+   padding: 5% 2.5%;
+    border-radius: 0;
+ }
+
+ .Fashion2{
+  padding: 0px 20%;
+  grid-column: span 2;
+ }
+
+}
+
 /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 .nav {
   width: 100%;
