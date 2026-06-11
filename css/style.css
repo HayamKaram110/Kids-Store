@@ -507,7 +507,7 @@ main .sale-note {
   width: 100%;
 }
 
-.baby-collection1 .text-coontainer{
+.baby-collection1 .text-coontainer {
   width: 100%;
   height: 100%;
   bottom: 0;
@@ -524,14 +524,12 @@ main .sale-note {
 .baby-collection1 h2 {
   position: relative;
   bottom: 0;
-  font-size: clamp(1.5rem, 1rem + 2.5vw, 2.5rem);
-  z-index: 999; 
+  font-size: clamp(1.5rem, 1rem + 2.5vw, 1.8rem);
+  z-index: 999;
   transition: 1s;
 }
 
-.text-coontainer:hover h2{
-  bottom: 20%;
-}
+
 
 .baby-collection1 a {
   color: rgb(94, 89, 89);
@@ -548,17 +546,30 @@ main .sale-note {
   transform: scale(1.02, 1.02);
 }
 
-.baby-collection1:hover a {
+.text-coontainer:hover h2 {
+  bottom: 20%;
+}
+
+.baby-collection1:hover a{
   visibility: visible;
   bottom: 20%;
 }
 
+@media (max-width: 480px), (min-width: 768px) and (max-width: 1200px) {
+.baby-collection1 a {
+  visibility: visible;
+}
+.text-coontainer h2, .text-coontainer a {
+  bottom: 20%;
+}
+}
+
 @media (max-width: 480px) {
-  .collection1{
+  .collection1 {
     padding: 0;
   }
-  
-  .container-collection1{
+
+  .container-collection1 {
     grid-template-columns: repeat(1, 1fr);
     padding: 5% 14%;
     border-radius: 0;
@@ -566,174 +577,145 @@ main .sale-note {
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {
- .container-collection1{
-  grid-template-columns: repeat(2, 1fr);
-   padding: 5% 2.5%;
+  .container-collection1 {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 5% 2.5%;
     border-radius: 0;
- }
+  }
 
- .Fashion2{
-  padding: 0px 20%;
-  grid-column: span 2;
- }
-
+  .Fashion2 {
+    padding: 0px 20%;
+    grid-column: span 2;
+  }
 }
 
 /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.new-arrival {
+  width: 100%;
+}
+
+.new-arrival-container {
+  width: 100%;
+  padding: 2%;
+}
+
 .nav {
   width: 100%;
-  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 70px;
-}
-.list-nav {
-  list-style: none;
-  margin-top: 20px;
-  display: flex;
-  gap: 40px;
-}
-.list-nav li .Newborn {
-  color: #e6a26c;
   border-bottom: 3px solid rgb(98, 97, 97);
-  padding-bottom: 6px;
-  margin-bottom: -2px;
+  padding: 5px 0px;
 }
+
+.title-nav h2 {
+  color: #4b4b4b;
+}
+
+.list-nav {
+  display: flex;
+  justify-content: space-around;
+}
+
 .list-nav li a {
-  text-decoration: none;
-  color: #393938;
-  font-size: 23px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-style: italic;
   font-weight: bold;
+  color: #e1a288;
   position: relative;
-  color: #e1a288;
 }
-.horizontal-line {
-  width: 95%;
-  margin: 0 auto;
+
+.list-nav li a::after {
+  content: "";
+  width: 0%;
   height: 2px;
-  background-color: gray;
-  border: none;
+  position: absolute;
+  background-color: #2d2d2d;
+  bottom: 0;
+  left: 0;
 }
-.title-nav h2 {
-  margin-top: 15px;
-  margin-left: -35px;
-  color: #e1a288;
-  color: #4b4b4b;
+
+.list-nav li a:hover::after {
+  animation: border-bottom 1s infinite;
 }
-/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@keyframes border-bottom {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
 .container-FirstCard {
   width: 100%;
-  height: 550px;
-  margin: 20px auto;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
 }
+
 .card-box {
-  width: 22.5%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .card {
-  width: 100%;
-  height: 500px;
-  position: relative;
+  padding: 2%;
   transition: 1s;
   transform-style: preserve-3d;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .front,
 .back {
   width: 100%;
-  height: 100%;
   border-radius: 15px;
-  position: absolute;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  overflow: hidden;
 }
+
 .front {
   z-index: 1;
   backface-visibility: hidden;
+  position: relative;
 }
+
+.front img,
+.back img {
+  width: 100%;
+  z-index: 0;
+}
+
 .back {
-  background-color: rgba(193, 182, 183, 0.8);
   transform: rotateY(180deg);
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  position: absolute;
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
 }
+
 .card:hover {
   transform: rotateY(180deg);
 }
-.card:hover .icon-card {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-.front-1 {
-  background-image: url(../images/m.jpg);
-}
 
-.front-2 {
-  background-image: url(../images/kid.jpg);
-}
-
-.front-3 {
-  background-image: url(../images/fas.jpg);
-}
-
-.front-4 {
-  background-image: url(../images/we.jpg);
-}
-
-.back-1 {
-  background-image: url(../images/2psc.jpg);
-}
-
-.back-2 {
-  background-image: url(../images/thj.jpg);
-}
-
-.back-3 {
-  background-image: url(../images/uek.jpg);
-}
-
-.back-4 {
-  background-image: url(../images/hyy.jpg);
-}
 .icon-card {
   width: 60%;
-  height: 50px;
   background-color: rgba(90, 81, 78, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 25px;
   border-radius: 20px;
-  margin-bottom: 20px;
-  cursor: pointer;
   transition: 0.2s;
-  visibility: hidden;
-  opacity: 0;
-  transform: translateY(20px);
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 }
-.icon-card i {
-  flex: 1;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.3s;
-}
+
 .shopping:hover,
 .heart:hover,
 .search:hover {
@@ -741,8 +723,6 @@ main .sale-note {
   border-radius: 20px;
 }
 .card-text {
-  margin-top: 10px;
-  font-size: 23px;
   font-weight: bold;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-style: italic;
@@ -761,6 +741,40 @@ main .sale-note {
 }
 .price span {
   color: #666;
+}
+
+@media (max-width: 480px), (min-width: 768px) and (max-width: 1200px){
+  .card .front{
+    display: none;
+  }
+  .card .back{
+    position: relative;
+  }
+
+  .card{
+    transform: rotateY(180deg);
+  }
+}
+
+@media  (min-width: 768px) and (max-width: 1200px) {
+   .container-FirstCard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .new-arrival .nav{
+    flex-direction: column;
+  }
+
+  .container-FirstCard {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .icon-card {
+    bottom: 10%;
+    width: 80%;
+  }
 }
 /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 .offers {
