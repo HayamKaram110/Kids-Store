@@ -59,7 +59,11 @@ Built using modern CSS (`clamp()`, CSS Grid, `aspect-ratio`, `object-fit`, custo
 
 ## Author
 
-Built by HEMA — frontend developer.
+Built by Hayam Karam — frontend developer.
+
+## Contributors
+
+- Mohamed Ebrahim
 
 ## License
 
