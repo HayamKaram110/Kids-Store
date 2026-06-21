@@ -50,7 +50,7 @@ img {
   text-align: center;
 }
 
-.heading h2{
+.heading h2 {
   font-size: clamp(1.4rem, 1rem + 2vw, 2rem);
 }
 
@@ -583,9 +583,14 @@ header .bottomheader .logo i {
   .baby-collection1 a {
     visibility: visible;
   }
+
   .text-container h2,
   .text-container a {
     bottom: 20%;
+  }
+
+  .baby-collection1:hover .text-container a {
+    opacity: 1;
   }
 }
 
@@ -937,7 +942,6 @@ header .bottomheader .logo i {
   }
 }
 
-
 .baby-section .toy-box {
   border-radius: 10px;
   overflow: hidden;
@@ -1022,11 +1026,11 @@ header .bottomheader .logo i {
   color: white;
   transition: 0.3s;
 }
-.arrow.left{
+.arrow.left {
   left: 0;
 }
 
-.arrow.right{
+.arrow.right {
   right: 0px;
 }
 
