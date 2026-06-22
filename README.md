@@ -24,7 +24,7 @@ Kids Wear is a full-page e-commerce landing page covering hero, product collecti
 ## Sections
 
 | Section | Description |
-|---|---|
+| --- | --- |
 | Header | Sticky navigation with dropdown menus, social icons, search/account/cart |
 | Hero | Promotional banner + main hero with fluid typography and CTA button |
 | Collection | Three-card grid showcasing newborn and baby fashion collections |
@@ -44,7 +44,7 @@ Kids Wear is a full-page e-commerce landing page covering hero, product collecti
 
 ## Project structure
 
-```
+```plaint text
 ├── index.html
 ├── css/
 │   ├── style.css      # project styles
